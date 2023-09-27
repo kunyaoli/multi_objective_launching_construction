@@ -34,7 +34,7 @@ if st.button('运行'):
             self.L_unit_price = L_unit_price
             self.A_unit_price = A_unit_price
             self.Jacking_length = Jacking_length
-            self.Obj_displacement = r".\pred_model\objective_01_model.joblib"
+            self.Obj_displacement = r"./pred_model/objective_01_model.joblib"
             # self.Obj_stress = "./objective_02_model.joblib"
 
         def _evaluate(self, x, out, *args, **kwargs):
@@ -65,7 +65,7 @@ if st.button('运行'):
 
     X, F = res.opt.get("X", "F")
 
-    Max_stress = load(r".\pred_model\objective_02_model.joblib").predict(X)
+    Max_stress = load(r"./pred_model/objective_02_model.joblib").predict(X)
 
     df = pd.DataFrame()
 
